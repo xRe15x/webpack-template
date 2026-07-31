@@ -2,7 +2,7 @@
   "name": "template",
   "author": "xre15x",
   "version": "1.0.0",
-  "description": "Webpack template",
+  "description": "A webpack template",
   "main": "index.js",
   "license": "ISC",
   "type": "module",
