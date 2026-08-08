@@ -10,4 +10,3 @@ Includes
 
 Note
 - html uses a template
-- this is my 3rd time setting up webpack (1st time with minimal help)
