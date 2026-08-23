@@ -23,7 +23,7 @@ const common: Configuration = {
     module: {
         rules: [
             {test: /\.css$/i, use: ["style-loader", "css-loader"]},
-            {test: /\.ts$/, use: "ts-loader", exclude: /node_modules/}
+            {test: /\.ts$/, loader: "ts-loader", exclude: /node_modules/, options: {configFile: "tsconfig.build.json"}}
         ]
     },
     resolve: {
