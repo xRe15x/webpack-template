@@ -27,7 +27,8 @@ const common: Configuration = {
         ]
     },
     resolve: {
-        extensions: [".ts", ".js"]
+        extensions: [".ts", ".js"],
+        extensionAlias: {".js": [".ts", ".js"]}
     }
 }
 
