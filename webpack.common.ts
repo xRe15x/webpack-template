@@ -1,4 +1,3 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "node:path";
 import { fileURLToPath } from "url";
 import { type Configuration } from "webpack";
@@ -9,20 +8,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const common: Configuration = {
-    entry: "./src/index.ts",
+    entry: "./src/index.html",
     output: {
         filename: "main.js",
         path: path.resolve(__dirname, "dist"),
         clean: true
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/index.html"
-        })
-    ],
+    experiments: {
+        html: true,
+        css: true
+    },
     module: {
         rules: [
-            {test: /\.css$/i, use: ["style-loader", "css-loader"]},
+            {test: /\.(png|svg|jpg|jpeg|gif)$/i, type: "asset/resource"},
             {test: /\.ts$/, loader: "ts-loader", exclude: /node_modules/, options: {configFile: "tsconfig.build.json"}}
         ]
     },
